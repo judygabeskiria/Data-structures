@@ -1,0 +1,27 @@
+import java.util.*;
+import java.lang.*;
+public class Josephus  {
+
+public static void main(String[] args)  {
+  //converting
+   int n = Integer.parseInt(args[0]),
+       m = Integer.parseInt(args[1]);
+//number of elements or people
+   Queue<Integer> q = new ArrayDeque<Integer>();
+   for (int i = 0; i < n; i++)
+   //insert the specified element into queue.
+       q.offer(new Integer(i));
+
+   int k = 0;
+   while (!q.isEmpty())
+   {
+       int x = q.poll();
+
+       if (++k % m == 0)
+           System.out.print(x + " ");
+       else
+           q.offer(x);
+   }
+   System.out.println();
+    }
+}
