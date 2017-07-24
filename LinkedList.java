@@ -92,3 +92,13 @@ while (n.next != null) {
     n.next = next.next;
     return true;
     }
+    //check if the linked list has a cycle
+    public static boolean hasCycle(Node head){
+      if(head==null) return false;
+      Node slow=head;
+      Node fast=head.next;
+      while(slow!=fast){
+        if(fast==null||fast.next==null) return false;
+        slow=slow.next;
+        fast=fast.next.next;}
+      return true;} //two pointers with different speeds, if there is a cycle they will eventually collide, if not they willl get to the end
