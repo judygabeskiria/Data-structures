@@ -1,0 +1,17 @@
+//rows-sorted left to right
+//columns-sorted top to bottom
+//size-MxN
+boolean FindElem(int[][] mat, int elem, int M, int N) {
+int row = 0;
+int col = N-1;
+while (row < M && col >= 0) {
+if (mat[row][col] == elem) {
+return true;
+} else if (mat[row][col] > elem) {
+col--;
+} else {
+row++;
+}
+}
+return false;
+}
